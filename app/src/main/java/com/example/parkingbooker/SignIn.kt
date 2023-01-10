@@ -42,12 +42,6 @@ class SignIn : AppCompatActivity() {
         if(email.isBlank() || pass.isBlank()){
             Toast.makeText(this, "Introduce a valid email and password", Toast.LENGTH_SHORT).show()
         }
-        else if(email.isBlank()){
-            Toast.makeText(this, "Introduce a valid email", Toast.LENGTH_SHORT).show()
-        }
-        else if(pass.isBlank()){
-            Toast.makeText(this, "Introduce a valid password", Toast.LENGTH_SHORT).show()
-        }
         else{
             auth.signInWithEmailAndPassword(email,pass).addOnCompleteListener { task ->
                 if(task.isSuccessful){
