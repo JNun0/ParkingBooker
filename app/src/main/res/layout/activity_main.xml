@@ -5,32 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/parquev2">
+    android:background="@drawable/parque">
 
     <TextView
         android:id="@+id/slotA"
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:text="A"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="98dp"
-        android:layout_marginLeft="80dp"
-        android:background="@drawable/box"/>
+        android:layout_marginTop="113dp"
+        android:layout_marginStart="85dp"
+        android:background="@drawable/box"
+        />
 
     <TextView
         android:id="@+id/slotC"
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:text="C"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/slotA"
         android:layout_marginTop="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="85dp"
+        android:layout_marginStart="85dp"
         android:background="@drawable/box"/>
 
     <TextView
@@ -38,12 +41,13 @@
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:text="E"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/slotC"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="85dp"
+        android:layout_marginStart="85dp"
         android:background="@drawable/box"/>
 
     <TextView
@@ -51,12 +55,13 @@
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:text="G"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/slotE"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="85dp"
+        android:layout_marginStart="85dp"
         android:background="@drawable/box"/>
 
     <TextView
@@ -64,12 +69,13 @@
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:text="I"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/slotG"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="85dp"
+        android:layout_marginStart="85dp"
         android:background="@drawable/box"/>
 
     <TextView
@@ -77,25 +83,97 @@
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:text="K"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/slotI"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="85dp"
+        android:layout_marginStart="85dp"
         android:background="@drawable/box"/>
 
     <TextView
         android:id="@+id/slotB"
         android:layout_width="100dp"
         android:layout_height="70dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginTop="113dp"
+        android:background="@drawable/box"
+        android:gravity="center"
         android:text="B"
         android:textColor="@color/black"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="98dp"
-        android:layout_marginRight="80dp"
-        android:background="@drawable/box"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/slotD"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/box"
+        android:gravity="center"
+        android:text="D"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slotB" />
+
+    <TextView
+        android:id="@+id/slotF"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/box"
+        android:gravity="center"
+        android:text="F"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slotD" />
+
+    <TextView
+        android:id="@+id/slotH"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/box"
+        android:gravity="center"
+        android:text="H"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slotF" />
+
+    <TextView
+        android:id="@+id/slotJ"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/box"
+        android:gravity="center"
+        android:text="J"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slotH" />
+
+    <TextView
+        android:id="@+id/slotL"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/box"
+        android:gravity="center"
+        android:text="L"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slotJ" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
