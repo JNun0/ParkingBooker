@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/parquev2">
+
+    <TextView
+        android:id="@+id/slotA"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="98dp"
+        android:layout_marginLeft="80dp"
+        android:background="@drawable/box"/>
+
+    <TextView
+        android:id="@+id/slotC"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="C"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/slotA"
+        android:layout_marginTop="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="85dp"
+        android:background="@drawable/box"/>
+
+    <TextView
+        android:id="@+id/slotE"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="E"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/slotC"
+        android:layout_marginTop="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="85dp"
+        android:background="@drawable/box"/>
+
+    <TextView
+        android:id="@+id/slotG"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="G"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/slotE"
+        android:layout_marginTop="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="85dp"
+        android:background="@drawable/box"/>
+
+    <TextView
+        android:id="@+id/slotI"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="I"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/slotG"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="85dp"
+        android:background="@drawable/box"/>
+
+    <TextView
+        android:id="@+id/slotK"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="K"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/slotI"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="85dp"
+        android:background="@drawable/box"/>
+
+    <TextView
+        android:id="@+id/slotB"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="B"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="98dp"
+        android:layout_marginRight="80dp"
+        android:background="@drawable/box"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
