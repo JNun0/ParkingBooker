@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
@@ -20,13 +21,17 @@ class SignUp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        var username_signup = findViewById<EditText>(R.id.username_signup)
+        var signin_txt = findViewById<TextView>(R.id.signintxt)
         var signup_button = findViewById<MaterialButton>(R.id.signup_button)
 
         auth= FirebaseAuth.getInstance()
 
         signup_button.setOnClickListener {
             register()
+        }
+
+        signin_txt.setOnClickListener {
+            goToLogin()
         }
 
     }
@@ -61,6 +66,7 @@ class SignUp : AppCompatActivity() {
 
     fun goToLogin(){
         val intent= Intent(this,SignIn::class.java)
+        finish()
         startActivity(intent)
     }
 }

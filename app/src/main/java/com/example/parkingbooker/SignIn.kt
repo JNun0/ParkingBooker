@@ -21,6 +21,7 @@ class SignIn : AppCompatActivity() {
 
         var loginbtn = findViewById<MaterialButton>(R.id.loginbtn)
         var signuptxt = findViewById<TextView>(R.id.signuptxt)
+        var forgotpass = findViewById<TextView>(R.id.forgotpassword)
 
         auth = FirebaseAuth.getInstance()
 
@@ -30,6 +31,10 @@ class SignIn : AppCompatActivity() {
 
         signuptxt.setOnClickListener{
             goToRegister()
+        }
+
+        forgotpass.setOnClickListener {
+            goToForgot()
         }
     }
     private fun login(){
@@ -59,6 +64,13 @@ class SignIn : AppCompatActivity() {
     private fun goToRegister(){
         val intent= Intent(this,SignUp::class.java)
         startActivity(intent)
+        finish()
+    }
+
+    private fun goToForgot(){
+        val intent= Intent(this,ForgotPassword::class.java)
+        startActivity(intent)
+        finish()
     }
 
 }
