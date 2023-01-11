@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                 slot.user = userID
                 btn.setBackgroundColor(Color.RED)
             }else if(slot.user != "user" && slot.user != userID){
-                Toast.makeText(this , "Ocupado" , Toast.LENGTH_LONG).show()
+                Toast.makeText(this , "Occupied" , Toast.LENGTH_LONG).show()
             } else {
                 slot.user = "user"
                 btn.setBackgroundColor(Color.parseColor("#3BB143"))
