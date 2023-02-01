@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        auth = FirebaseAuth.getInstance()
+
         val btnA: Button = findViewById(R.id.slotA)
         val btnB: Button = findViewById(R.id.slotB)
         val btnC: Button = findViewById(R.id.slotC)
@@ -48,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         val btnJ: Button = findViewById(R.id.slotJ)
         val btnK: Button = findViewById(R.id.slotK)
         val btnL: Button = findViewById(R.id.slotL)
+        val logout = findViewById<Button>(R.id.logout)
 
         val btnAID = btnA.id
         val btnBID = btnB.id
@@ -70,13 +73,13 @@ class MainActivity : AppCompatActivity() {
         val slotC = Slot(btnCID , "user")
         val slotD = Slot(btnDID , "user")
         val slotE = Slot(btnEID , "user")
-        val slotF = Slot(btnFID , "user")
-        val slotG = Slot(btnGID , "user")
-        val slotH = Slot(btnHID , "user")
-        val slotI = Slot(btnIID , "user")
-        val slotJ = Slot(btnJID , "user")
-        val slotK = Slot(btnKID , "user")
-        val slotL = Slot(btnLID , "user")
+        val slotF = Slot(btnFID , "user1")
+        val slotG = Slot(btnGID , "user2")
+        val slotH = Slot(btnHID , "user3")
+        val slotI = Slot(btnIID , "user4")
+        val slotJ = Slot(btnJID , "user5")
+        val slotK = Slot(btnKID , "user6")
+        val slotL = Slot(btnLID , "user7")
 
         val userID = Firebase.auth.currentUser.toString()
 
@@ -96,7 +99,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnA.setOnClickListener{
-            checkIfTaken(slotA , btnA )
+            val intent = Intent(this,Spota::class.java)
+            startActivity(intent)
         }
         btnB.setOnClickListener(){
             checkIfTaken(slotB , btnB )
@@ -130,6 +134,13 @@ class MainActivity : AppCompatActivity() {
         }
         btnL.setOnClickListener(){
             checkIfTaken(slotL , btnL )
+        }
+        logout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this,SignIn::class.java)
+            finish()
+            startActivity(intent)
         }
 
     }

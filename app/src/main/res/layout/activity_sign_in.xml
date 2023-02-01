@@ -28,7 +28,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="50dp"
         android:background="#30ffffff"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
         android:drawablePadding="15dp"
         android:hint="Email"
         android:padding="20dp"
