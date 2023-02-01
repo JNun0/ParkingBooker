@@ -26,10 +26,6 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    private companion object{
-        private const val CHANNEL_ID = "channel01"
-    }
-
     lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -106,46 +102,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,SignIn::class.java)
             finish()
             startActivity(intent)
-        }
-
-    }
-
-    private fun sendNotification(){
-        createNotificationChannel()
-
-        val notificationId = 1
-
-        val mainIntent = Intent(this, SignIn::class.java)
-        mainIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        val mainPendingIntent = PendingIntent.getActivity(this,1,mainIntent,PendingIntent.FLAG_IMMUTABLE)
-
-        val notificationBuilder = NotificationCompat.Builder(this, "$CHANNEL_ID")
-
-        notificationBuilder.setSmallIcon(R.drawable.car_foreground)
-
-        notificationBuilder.setContentTitle("Vacant")
-
-        notificationBuilder.setContentText("Your spot is vacant")
-
-        notificationBuilder.priority = NotificationCompat.PRIORITY_DEFAULT
-
-        notificationBuilder.setAutoCancel(true)
-
-        notificationBuilder.setContentIntent(mainPendingIntent)
-
-        val notificationManagerCompact = NotificationManagerCompat.from(this)
-        notificationManagerCompact.notify(notificationId, notificationBuilder.build())
-    }
-
-    private fun createNotificationChannel(){
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            val name: CharSequence = "MyNotification"
-            val description = "My Description"
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val notificationChannel = NotificationChannel(CHANNEL_ID, name, importance)
-            notificationChannel.description = description
-            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.createNotificationChannel(notificationChannel)
         }
     }
 }
