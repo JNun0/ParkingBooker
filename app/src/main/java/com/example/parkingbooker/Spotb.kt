@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 
-class Spota : AppCompatActivity() {
+class Spotb : AppCompatActivity() {
 
     private companion object{
         private const val CHANNEL_ID = "channel01"
@@ -37,7 +37,7 @@ class Spota : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_spota)
+        setContentView(R.layout.activity_spotb)
 
         var name = findViewById<TextView>(R.id.name)
         var carplate = findViewById<TextView>(R.id.carplate)
@@ -99,20 +99,20 @@ class Spota : AppCompatActivity() {
                     editor.putString("carPlateValue", user.carPlate)
                     editor.putString("emailValue", user.email)
                     editor.apply()
-                    mFirebaseDatabase.getReference("spots").child("spotA").child("user")
+                    mFirebaseDatabase.getReference("spots").child("spotB").child("user")
                         .setValue(user)
-                    mFirebaseDatabase.getReference("spots").child("spotA").child("userIdWhoReserved")
+                    mFirebaseDatabase.getReference("spots").child("spotB").child("userIdWhoReserved")
                         .setValue(currentUser.uid)
                     userIdWhoReserved = currentUser.uid
                     updateUi(name, carplate, email, reserve, vacate)
-                    Toast.makeText(this@Spota, "Spot reserved", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Spotb, "Spot reserved", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this@Spota, "User data not found", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Spotb, "User data not found", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@Spota, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Spotb, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }
@@ -121,7 +121,7 @@ class Spota : AppCompatActivity() {
     private fun vacateSpot(name: TextView, carplate: TextView, email: TextView, reserve: Button, vacate: Button) {
         val currentUser = auth.currentUser
         val userReference = mFirebaseDatabase.getReference("users").child(currentUser!!.uid)
-        mFirebaseDatabase.getReference("spots").child("spotA").child("userIdWhoReserved")
+        mFirebaseDatabase.getReference("spots").child("spotB").child("userIdWhoReserved")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val userIdWhoReserved = dataSnapshot.getValue(String::class.java)
@@ -134,18 +134,18 @@ class Spota : AppCompatActivity() {
                         name.text = ""
                         carplate.text = ""
                         email.text = ""
-                        mFirebaseDatabase.getReference("spots").child("spotA").child("user").removeValue()
-                        mFirebaseDatabase.getReference("spots").child("spotA")
+                        mFirebaseDatabase.getReference("spots").child("spotB").child("user").removeValue()
+                        mFirebaseDatabase.getReference("spots").child("spotB")
                             .child("userIdWhoReserved").setValue(null)
                         updateUi(name, carplate, email, reserve, vacate)
                         sendNotification()
                     } else {
-                        Toast.makeText(this@Spota, "Cannot vacate the spot", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@Spotb, "Cannot vacate the spot", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {
-                    Toast.makeText(this@Spota, "Error", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Spotb, "Error", Toast.LENGTH_SHORT).show()
                 }
             })
     }
@@ -158,7 +158,7 @@ class Spota : AppCompatActivity() {
         mainIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         val mainPendingIntent = PendingIntent.getActivity(this,1,mainIntent, PendingIntent.FLAG_IMMUTABLE)
 
-        val notificationBuilder = NotificationCompat.Builder(this, "${Spota.CHANNEL_ID}")
+        val notificationBuilder = NotificationCompat.Builder(this, "${Spotb.CHANNEL_ID}")
 
         notificationBuilder.setSmallIcon(R.drawable.car_foreground)
 
@@ -181,7 +181,7 @@ class Spota : AppCompatActivity() {
             val name: CharSequence = "MyNotification"
             val description = "My Description"
             val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val notificationChannel = NotificationChannel(Spota.CHANNEL_ID, name, importance)
+            val notificationChannel = NotificationChannel(Spotb.CHANNEL_ID, name, importance)
             notificationChannel.description = description
             val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(notificationChannel)

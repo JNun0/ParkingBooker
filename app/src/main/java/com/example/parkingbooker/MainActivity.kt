@@ -52,88 +52,53 @@ class MainActivity : AppCompatActivity() {
         val btnL: Button = findViewById(R.id.slotL)
         val logout = findViewById<Button>(R.id.logout)
 
-        val btnAID = btnA.id
-        val btnBID = btnB.id
-        val btnCID = btnC.id
-        val btnDID = btnD.id
-        val btnEID = btnE.id
-        val btnFID = btnF.id
-        val btnGID = btnG.id
-        val btnHID = btnH.id
-        val btnIID = btnI.id
-        val btnJID = btnJ.id
-        val btnKID = btnK.id
-        val btnLID = btnL.id
-
-        class Slot(var slot: Int , var user: String) {
-        }
-
-        val slotA = Slot(btnAID , "user")
-        val slotB = Slot(btnBID , "user")
-        val slotC = Slot(btnCID , "user")
-        val slotD = Slot(btnDID , "user")
-        val slotE = Slot(btnEID , "user")
-        val slotF = Slot(btnFID , "user1")
-        val slotG = Slot(btnGID , "user2")
-        val slotH = Slot(btnHID , "user3")
-        val slotI = Slot(btnIID , "user4")
-        val slotJ = Slot(btnJID , "user5")
-        val slotK = Slot(btnKID , "user6")
-        val slotL = Slot(btnLID , "user7")
-
-        val userID = Firebase.auth.currentUser.toString()
-
-        auth = FirebaseAuth.getInstance()
-
-        fun checkIfTaken(slot: Slot , btn : Button){
-            if(slot.user == "user"){
-                slot.user = userID
-                btn.setBackgroundColor(Color.RED)
-            }else if(slot.user != "user" && slot.user != userID){
-                Toast.makeText(this , "Occupied" , Toast.LENGTH_LONG).show()
-            } else {
-                slot.user = "user"
-                btn.setBackgroundColor(Color.parseColor("#3BB143"))
-                sendNotification()
-            }
-        }
-
         btnA.setOnClickListener{
             val intent = Intent(this,Spota::class.java)
             startActivity(intent)
         }
         btnB.setOnClickListener(){
-            checkIfTaken(slotB , btnB )
+            val intent = Intent(this,Spotb::class.java)
+            startActivity(intent)
         }
         btnC.setOnClickListener(){
-            checkIfTaken(slotC , btnC )
+            val intent = Intent(this,Spotc::class.java)
+            startActivity(intent)
         }
         btnD.setOnClickListener(){
-            checkIfTaken(slotD , btnD )
+            val intent = Intent(this,Spotd::class.java)
+            startActivity(intent)
         }
         btnE.setOnClickListener(){
-            checkIfTaken(slotE , btnE )
+            val intent = Intent(this,Spote::class.java)
+            startActivity(intent)
         }
         btnF.setOnClickListener(){
-            checkIfTaken(slotF , btnF )
+            val intent = Intent(this,Spotf::class.java)
+            startActivity(intent)
         }
         btnG.setOnClickListener(){
-            checkIfTaken(slotG , btnG )
+            val intent = Intent(this,Spotg::class.java)
+            startActivity(intent)
         }
         btnH.setOnClickListener(){
-            checkIfTaken(slotH , btnH )
+            val intent = Intent(this,Spoth::class.java)
+            startActivity(intent)
         }
         btnI.setOnClickListener(){
-            checkIfTaken(slotI , btnI )
+            val intent = Intent(this,Spoti::class.java)
+            startActivity(intent)
         }
         btnJ.setOnClickListener(){
-            checkIfTaken(slotJ , btnJ )
+            val intent = Intent(this,Spotj::class.java)
+            startActivity(intent)
         }
         btnK.setOnClickListener(){
-            checkIfTaken(slotK , btnK )
+            val intent = Intent(this,Spotk::class.java)
+            startActivity(intent)
         }
         btnL.setOnClickListener(){
-            checkIfTaken(slotL , btnL )
+            val intent = Intent(this,Spotl::class.java)
+            startActivity(intent)
         }
         logout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
